@@ -1,4 +1,3 @@
-// src/components/TripDetails/CreateActivityModal.tsx
 import { Calendar, Tag, X } from 'lucide-react';
 import { FormEvent } from 'react';
 import { useParams } from 'react-router-dom';
@@ -6,12 +5,20 @@ import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { api } from '../../services/api/axios';
 
+interface IActivity {
+  id: string;
+  title: string;
+  occurs_at: string;
+}
+
 interface CreateActivityModalProps {
   closeCreateActivityModal: () => void;
+  onActivityCreated: (activity: IActivity) => void;
 }
 
 export function CreateActivityModal({
   closeCreateActivityModal,
+  onActivityCreated,
 }: CreateActivityModalProps) {
   const { tripId } = useParams();
 
@@ -23,12 +30,20 @@ export function CreateActivityModal({
     const title = data.get('title')?.toString();
     const occurs_at = data.get('occurs_at')?.toString();
 
-    await api.post(`/trips/${tripId}/activities`, {
-      title,
-      occurs_at,
-    });
+    if (title && occurs_at) {
+      const response = await api.post(`/trips/${tripId}/activities`, {
+        title,
+        occurs_at,
+      });
 
-    closeCreateActivityModal();
+      onActivityCreated({
+        id: response.data.activityId,
+        title,
+        occurs_at,
+      });
+
+      closeCreateActivityModal();
+    }
   }
 
   return (
