@@ -1,11 +1,11 @@
 import { FormEvent, useState } from 'react';
 import { DateRange } from 'react-day-picker';
 import { useNavigate } from 'react-router-dom';
-import { api } from '../../lib/axios';
-import { ConfirmTropModal } from './confirm-trip-modal';
-import { InviteGuestModal } from './invite-guest-modal';
-import { DestinationAndDateStep } from './steps/destination-and-date-step';
-import { InviteGuestStep } from './steps/invite-guest-step';
+import { ConfirmTropModal } from '../../components/CreateTrip/ConfirmTripModalProps';
+import { InviteGuestModal } from '../../components/CreateTrip/InviteGuestModal';
+import { DestinationAndDateStep } from '../../components/CreateTrip/steps/DestinationAndDateStepProps';
+import { InviteGuestStep } from '../../components/CreateTrip/steps/InviteGuestStep';
+import { api } from '../../services/api/axios';
 
 export function CreateTripPage() {
   const navigate = useNavigate();

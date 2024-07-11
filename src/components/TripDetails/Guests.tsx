@@ -2,7 +2,7 @@ import { CheckCircle2, CircleDashed, UserCog } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from '../../components/Button';
-import { api } from '../../lib/axios';
+import { api } from '../../services/api/axios';
 
 interface IParticipantsProps {
   id: string;

@@ -1,11 +1,11 @@
 import { Plus } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '../../components/Button';
-import { Activities } from './activities';
-import { CreateActivityModal } from './create-activity-modal';
-import { DestinationAndDateHeader } from './destination-and-date-header';
-import { Guests } from './guests';
-import { ImportantLinks } from './important-links';
+import { Activities } from '../../components/TripDetails/Activities';
+import { CreateActivityModal } from '../../components/TripDetails/CreateActivityModal';
+import { DestinationAndDateHeader } from '../../components/TripDetails/DestinationAndDateHeader';
+import { Guests } from '../../components/TripDetails/Guests';
+import { ImportantLinks } from '../../components/TripDetails/ImportantLinks';
 
 export function TripDetailsPage() {
   const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] =
