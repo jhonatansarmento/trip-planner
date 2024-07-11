@@ -6,8 +6,7 @@ interface InputProps extends ComponentProps<'input'> {
 }
 
 export function Input({ className, iconLeft, iconRight, ...rest }: InputProps) {
-  const baseClasses =
-    'h-14 px-4 bg-zinc-950 border-zinc-800 rounded-lg flex items-center gap-2';
+  const baseClasses = 'px-4 border-zinc-800 rounded-lg flex items-center gap-2';
 
   return (
     <div className={`${baseClasses} ${className}`}>

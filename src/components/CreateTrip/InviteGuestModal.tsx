@@ -27,7 +27,7 @@ export function InviteGuestModal({
               <X className='size-5 text-zinc-400' />
             </button>
           </div>
-          <p className='text-sm text-zinc-400'>
+          <p className='text-sm text-zinc-400 text-left'>
             Os convidados irão receber e-mails para confirmar a participação na
             viagem.
           </p>
@@ -55,17 +55,17 @@ export function InviteGuestModal({
 
         <form
           onSubmit={addNewEmailToInvite}
-          className='p-2.5 bg-zinc-950 border-zinc-800 rounded-lg flex items-center gap-2'
+          className='p-3 bg-zinc-950 border-zinc-800 rounded-lg flex items-center justify-between gap-2'
         >
           <Input
             type='email'
             name='email'
+            className='h-3'
             placeholder='Digite o e-mail do convidado'
             iconLeft={<AtSign className='text-zinc-400 size-5' />}
           />
-          <Button type='submit'>
+          <Button iconRight={<Plus className='size-5 ' />} type='submit'>
             Convidar
-            <Plus className='size-5 ' />
           </Button>
         </form>
       </div>

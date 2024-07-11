@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { DateRange, DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { Button } from '../../../components/Button';
+import { Input } from '../../Input';
 
 interface DestinationAndDateStepProps {
   isGuestsInputOpen: boolean;
@@ -37,19 +38,18 @@ export function DestinationAndDateStep({
     eventStartAndEndDates.from &&
     eventStartAndEndDates.to
       ? format(eventStartAndEndDates.from, "d ' de 'LLL")
-          .concat(' ate ')
+          .concat(' até ')
           .concat(format(eventStartAndEndDates.to, "d ' de 'LLL"))
       : null;
 
   return (
     <div className='h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3'>
       <div className='flex items-center gap-2 flex-1'>
-        <MapPin className='size-5 text-zinc-400' />
-        <input
+        <Input
           disabled={isGuestsInputOpen}
           type='text'
-          placeholder='Para onde voce vai'
-          className='bg-transparent text-lg placeholder-zinc-400 outline-none flex-1'
+          iconLeft={<MapPin className='size-5 text-zinc-400' />}
+          placeholder='Para onde você vai'
           onChange={(event) => setDestination(event.target.value)}
         />
       </div>
@@ -65,8 +65,8 @@ export function DestinationAndDateStep({
       </button>
 
       {isDatePickerOpen && (
-        <div className='fixed inset-0 bg-black/60 flex items-center justify-center '>
-          <div className=' rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5'>
+        <div className='fixed inset-0 bg-black/60 flex items-center justify-center'>
+          <div className='rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5'>
             <div className='space-y-2'>
               <div className='flex items-center justify-between'>
                 <h2 className='text-lg font-semibold'>Selecione a data</h2>

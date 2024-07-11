@@ -3,7 +3,7 @@ import React, { ComponentProps } from 'react';
 interface ButtonProps extends ComponentProps<'button'> {
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'transparent';
 }
 
 export function Button({
@@ -21,6 +21,7 @@ export function Button({
   const variantClasses = {
     primary: 'bg-lime-300 text-lime-950 hover:bg-lime-400',
     secondary: 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700',
+    transparent: 'bg-transparent',
   };
 
   return (

@@ -19,7 +19,7 @@ export function InviteGuestStep({
         onClick={openGuestsModal}
         className='flex-1'
         iconLeft={<UserRoundPlus className='size-5 text-zinc-400' />}
-        variant='secondary'
+        variant='transparent'
       >
         {emailsToInvite.length > 0 ? (
           <span className='text-zinc-100 text-lg flex-1 text-left'>
