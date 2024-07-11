@@ -1,7 +1,9 @@
+// src/components/TripDetails/CreateActivityModal.tsx
 import { Calendar, Tag, X } from 'lucide-react';
 import { FormEvent } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
 import { api } from '../../services/api/axios';
 
 interface CreateActivityModalProps {
@@ -44,25 +46,17 @@ export function CreateActivityModal({
           </p>
         </div>
         <form onSubmit={createActivity} className='space-y-3'>
-          <div className='h-14 px-4 bg-zinc-950 border-zinc-800 rounded-lg flex items-center gap-2'>
-            <Tag className='text-zinc-400 size-5' />
-            <input
-              name='title'
-              placeholder='Qual a atividade?'
-              className='bg-transparent text-lg placeholder-zinc-400 outline-none flex-1'
-            />
-          </div>
-
-          <div className='h-14 px-4 bg-zinc-950 border-zinc-800 rounded-lg flex items-center gap-2'>
-            <Calendar className='text-zinc-400 size-5' />
-            <input
-              type='datetime-local'
-              name='occurs_at'
-              placeholder='Data e horário da atividade'
-              className='bg-transparent text-lg placeholder-zinc-400 outline-none flex-1'
-            />
-          </div>
-
+          <Input
+            name='title'
+            placeholder='Qual a atividade?'
+            iconLeft={<Tag className='text-zinc-400 size-5' />}
+          />
+          <Input
+            type='datetime-local'
+            name='occurs_at'
+            placeholder='Data e horário da atividade'
+            iconLeft={<Calendar className='text-zinc-400 size-5' />}
+          />
           <Button type='submit' className='w-full justify-center'>
             Salvar atividade
           </Button>

@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Button } from '../../components/Button';
 import { api } from '../../services/api/axios';
 
-interface ITripProps {
+interface DestinationAndDateStepProps {
   id: string;
   destination: string;
   ends_at: string;
@@ -15,7 +15,7 @@ interface ITripProps {
 
 export function DestinationAndDateHeader() {
   const { tripId } = useParams();
-  const [trip, setTrip] = useState<ITripProps | undefined>();
+  const [trip, setTrip] = useState<DestinationAndDateStepProps | undefined>();
 
   useEffect(() => {
     api.get(`/trips/${tripId}`).then((response) => setTrip(response.data.trip));

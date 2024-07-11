@@ -2,7 +2,7 @@ import { FormEvent, useCallback, useState } from 'react';
 import { DateRange } from 'react-day-picker';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api/axios';
-import { ConfirmTropModal } from './ConfirmTripModalProps';
+import { ConfirmTripModal } from './ConfirmTripModal';
 import { InviteGuestModal } from './InviteGuestModal';
 import { DestinationAndDateStep } from './steps/DestinationAndDateStepProps';
 import { InviteGuestStep } from './steps/InviteGuestStep';
@@ -126,7 +126,7 @@ export const CreateTripForm = () => {
         />
       )}
       {isConfirmTripModalOpen && (
-        <ConfirmTropModal
+        <ConfirmTripModal
           closeConfirmTripModal={closeConfirmTripModal}
           createTrip={createTrip}
           setOwnerName={setOwnerName}
